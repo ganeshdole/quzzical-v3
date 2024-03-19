@@ -6,7 +6,7 @@ export default function Quiz() {
   const [quizData, setQuizData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isShowAnswer, SetIsShowAnswer] = useState(false);
-
+  let tempData = [];
   function shuffleOption(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -60,8 +60,8 @@ export default function Quiz() {
 
   return (
     <div>
-      {questionElement}
-      {/* <button onClick={showAnswers}>Show Answer</button> */}
+      {!isShowAnswer && questionElement}
+      <button onClick={showAnswers}>Show Answer</button>
     </div>
   );
 }
