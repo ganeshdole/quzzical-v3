@@ -38,7 +38,7 @@ export default function Question(props) {
   return (
     <div className="question-card">
       <p>{he.decode(props.question.question)}</p>
-      {answerOptions}
+      <form>{answerOptions}</form>
     </div>
   );
 }
