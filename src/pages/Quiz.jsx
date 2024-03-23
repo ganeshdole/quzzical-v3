@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { nanoid } from "nanoid";
 import Question from "../components/Question";
-
 export default function Quiz() {
   const [quizData, setQuizData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isShowAnswer, SetIsShowAnswer] = useState(false);
-  let tempData = [];
+  const questionsData = useRef(quizData);
   function shuffleOption(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -41,27 +38,11 @@ export default function Quiz() {
         };
       });
     });
-    setIsLoading(false);
   }, []);
 
-  function showAnswers() {
-    SetIsShowAnswer((preValue) => !preValue);
-  }
-
   const questionElement = quizData.map((question) => {
-    return (
-      <Question
-        key={nanoid()}
-        question={question}
-        isShowAnswer={isShowAnswer}
-      />
-    );
+    return <Question key={nanoid()} question={question} />;
   });
 
-  return (
-    <div>
-      {!isShowAnswer && questionElement}
-      <button onClick={showAnswers}>Show Answer</button>
-    </div>
-  );
+  return <div>{questionElement}</div>;
 }

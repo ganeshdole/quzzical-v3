@@ -10,15 +10,6 @@ export default function Question(props) {
   };
 
   const answerOptions = props.question.options.map((options) => {
-    const optionClasses = [];
-    if (!props.isShowAnswer) {
-      options.isSelected && optionClasses.push("selected");
-    } else {
-      options.isCorrect
-        ? optionClasses.push("correct-option")
-        : options.isSelected && optionClasses.push("wrong-option");
-    }
-
     return (
       <div key={nanoid()} id={props.question.questionId}>
         <input
@@ -28,7 +19,6 @@ export default function Question(props) {
           value={options.option}
           checked={selectedAnswer === options.option}
           onChange={handleAnswerChange}
-          className={optionClasses.join(" ")}
         />
         <label htmlFor={options.optionId}>{he.decode(options.option)}</label>
       </div>
