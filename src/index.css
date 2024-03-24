@@ -9,6 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; 
+  background-image: url("./assets/PageBackground.png");
+  background-size: cover;
 }
 
 main {
@@ -19,8 +21,6 @@ main {
   width: 100vw;
   height: 100vh;
   padding: 40px;
-  background-image: url("./assets/PageBackground.png");
-  background-size: cover;
 }
 
 .start-page {
@@ -46,8 +46,7 @@ main {
   text-align: center;
   margin: 5px;
 }
-
-.start-page button {
+ button {
   width: 193px;
   height: 52px;
   border-radius: 15px;
@@ -58,7 +57,7 @@ main {
 .question-card p {
   font-family: Karla;
   margin: 10px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 19px;
   letter-spacing: 0em;
@@ -69,12 +68,13 @@ main {
   display: inline-block;
 }
 
-.question-card div label {
+label {
+  display: inline-block;
+  margin: 2px;
   font-family: Inter;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 12px;
-  letter-spacing: 0em;
   text-align: center;
   border: 0.79px solid #4D5B9E;
   padding: 5px 10px;
@@ -102,13 +102,14 @@ input[type="radio"] {
   background-color: #d6dbf5;
 }
 
-.correct-option{
+.correct{
   background-color: #94D7A2;
 }
 
-.wrong-option{
+.incorrect{
   background: #F8BCBC;
 }
+
 
 @media (min-width: 600px) {
   body {
@@ -123,6 +124,17 @@ input[type="radio"] {
   }
 }
 
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
-
-
+.score-card{
+  font-family: Inter;
+  font-size: 12.8px;
+  font-weight: 700;
+  line-height: 15.49px;
+  color: #293264;
+}
