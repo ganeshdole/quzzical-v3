@@ -9,12 +9,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; 
-  background-image: url("./assets/PageBackground.png");
-  background-size: cover;
+  
+  
 }
 
 main {
   display: flex;
+  background-image: url("./assets/PageBackground.png");
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -47,10 +49,13 @@ main {
   margin: 5px;
 }
  button {
+  background: #4D5B9E;
+  color: white;
   width: 193px;
   height: 52px;
   border-radius: 15px;
   margin-top: 30px;
+  border: none;
 }
 
 
