@@ -108,7 +108,7 @@ export default function Quiz() {
       {!isLoading ? questionElements : <h1>Loading...</h1>}
       {!isLoading && !showResult && (
         <div className="card-footer">
-          <button onClick={() => setShowResult(true)}>Check Answer</button>
+          <button onClick={() => setShowResult(true)}>Show Answer</button>
         </div>
       )}
       {showResult && (
